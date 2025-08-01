@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Task Manager</title>
+    <!-- Link to the CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main container for the entire app -->
+    <div class="container">
+        <!-- The Welcome Page - Initially displayed -->
+        <div id="welcome-page" class="page active">
+            <h1 class="welcome-title">Welcome to your Personal Task Manager!</h1>
+            <p class="welcome-subtitle">Please enter your name to begin.</p>
+            <form id="name-form" class="name-form">
+                <input type="text" id="name-input" class="name-input" placeholder="Your name" required>
+                <button type="submit" class="name-submit-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- The Personal Dashboard - Initially hidden -->
+        <div id="dashboard-page" class="page">
+            <!-- Header section with dynamic greeting, date, and time -->
+            <header class="header">
+                <h1 id="greeting" class="app-title"></h1>
+                <div class="datetime-container">
+                    <div id="date" class="date"></div>
+                    <div id="time" class="time"></div>
+                </div>
+            </header>
+
+            <!-- Task input form -->
+            <form id="task-form" class="task-form">
+                <input type="text" id="task-input" class="task-input" placeholder="Add a new task..." required>
+                <button type="submit" class="add-task-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>
+
+           <!-- Task list container -->
+            <div class="tasks-container">
+                <ul id="task-list" class="task-list">
+                    <!-- Tasks will be dynamically added here by JavaScript -->
+                </ul>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="task-filters">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <!-- Motivational Quote section -->
+            <div id="quote-container" class="quote-container">
+                <p id="quote-text" class="quote-text"></p>
+                <p id="quote-author" class="quote-author"></p>
+            </div>
+
+
+    <!-- Message box for user feedback, instead of alerts -->
+    <div id="message-box" class="message-box"></div>
+
+    <!-- Link to the JavaScript file for functionality -->
+    <script src="script.js"></script>
+</body>
+</html>
